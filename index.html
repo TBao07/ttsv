@@ -3,100 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang thông tin cá nhân</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Đăng Ký Tài Khoản</title>
+    <link rel="stylesheet" href="css/style1.css"> 
 </head>
-
 <body>
 
-    <div class="container">
-
-        <h1>NGÔ THIÊN BẢO</h1>
-
-        <h2>Trang thông tin cá nhân</h2>
-
-        <div class="intro-box">
-
-            <img class="avatar"
-                src="assets/images/110125014.JPG"
-                alt="Ảnh">
-
-            <div class="intro-content">
-
-                <h3>Giới thiệu bản thân</h3>
-
-                <p>
-                    Xin chào! Tôi là <b>Ngô Thiên Bảo</b>, sinh viên ngành
-                    <b>Công nghệ thông tin</b>. Tôi yêu thích lập trình và thiết kế web.
-                    Mục tiêu của tôi là trở thành một lập trình viên chuyên nghiệp.
-                </p>
-
-                <p>
-                    Tôi đang học tại <b>Đại học Trà Vinh</b>. Tôi luôn cố gắng học tập
-                    và phát triển kỹ năng mỗi ngày.
-                </p>
-
-            </div>
+<div class="container">
+    <div class="login-box">
+    <form id="frmLogin" action="#" method="POST">
+        <h2 id="title">ĐĂNG KÝ HỆ THỐNG</h2>
+        <div class="form-control">
+            <label for="txtRegisterUser">Tên tài khoản:</label>
+            <input type="text" id="txtRegisterUser" placeholder="Nhập tên tài khoản..." required>
         </div>
-
-        <div class="section-title">Thông tin chi tiết</div>
-
-        <table>
-            <tr>
-                <th>Thông tin</th>
-                <th>Nội dung</th>
-            </tr>
-
-            <tr>
-                <td>Họ và tên</td>
-                <td>Ngô Thiên Bảo</td>
-            </tr>
-
-            <tr>
-                <td>Tuổi</td>
-                <td>19</td>
-            </tr>
-
-            <tr>
-                <td>Lớp</td>
-                <td>DA25TTB</td>
-            </tr>
-
-            <tr>
-                <td>Trường</td>
-                <td>Đại học Trà Vinh</td>
-            </tr>
-        </table>
-
-        <div class="section-title">Sở thích</div>
-
-        <ul>
-            <li>Nghe nhạc</li>
-            <li>Xem phim</li>
-            <li>Chơi game</li>
-        </ul>
-
-        <div class="section-title">Kỹ năng và mục tiêu</div>
-
-        <ol>
-            <li>Biết HTML cơ bản</li>
-            <li>Đang học CSS và JavaScript</li>
-            <li>Muốn làm website cá nhân</li>
-        </ol>
-
-        <div class="section-title">Liên hệ</div>
-
-        <p>
-            Facebook:
-            <a href="https://www.facebook.com/share/1CvfacrsVr/">Trang Facebook của tôi</a>
+        
+		<div class="form-control">
+            <label for="txtRegisterPassConfirm">Tuổi:</label>
+            <input type="text" id="txtNumber" placeholder="Nhập tuổi..." required>
+        </div>
+		
+		<div class="form-control">
+            <label for="txtRegisterPassConfirm">Nơi sinh:</label>
+            <input type="text" id="txt" placeholder="Nhập nơi sinh..." required>
+        </div>
+		
+		<div class="form-control">
+            <label for="txtRegisterPassConfirm">HỌ TÊN THẬT:</label>
+            <input type="text" id="txtRegisterPassConfirm" placeholder="Nhập lại mật khẩu..." required>
+        </div>
+		
+        <div class="form-control">
+            <label for="txtRegisterEmail">Email:</label>
+            <input type="email" id="txtRegisterEmail" placeholder="Nhập email của bạn..." required>
+        </div>
+        
+        <div class="form-control">
+            <label for="txtRegisterPass">Mật khẩu:</label>
+            <input type="password" id="txtRegisterPass" placeholder="Tạo mật khẩu..." required>
+        </div>
+        
+        <div class="form-control">
+            <label for="txtRegisterPassConfirm">Xác nhận mật khẩu:</label>
+            <input type="password" id="txtRegisterPassConfirm" placeholder="Nhập lại mật khẩu..." required>
+        </div>
+        
+        <input type="submit" class="button" value="Đăng ký">
+        
+       
+        <p class="switch-form">
+            Bạn đã có tài khoản? <a href="html/page2.html">Đăng nhập ngay</a>
         </p>
-
-        <p>
-            Email:
-            <a href="mailto:bngo7385@gmail.com">My mail</a>
-        </p>
-
+    </form>
     </div>
+</div>
 
 </body>
 </html>
