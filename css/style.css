@@ -1,95 +1,60 @@
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: Arial, Helvetica, sans-serif;
+	margin:0;
+	padding:0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size:13pt;
+	line-height:2;
+	box-sizing: border-box;
 }
-body{
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background: linear-gradient(135deg,#f8cdda,#89f7fe);
-}
-.container{
-    width:100%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-#frmLogin{
-    width:550px;
-height: 700px;
-    background:white;
-    padding:40px;
-    border-radius:25px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.3);
-    border:2px solid #666;
-}
+
 #title{
-    text-align:center;
-    color:#e91e63;
-    font-size:45px;
-    margin-bottom:40px;
+	text-align: center;
+	color:green;
 }
-.form-group{
-    margin-bottom:25px;
+.container {
+    width: 920px;
+    margin: 5px auto;
+    border: 2px solid #666;
+    background-color: pink;
+    padding: 5px;
+	align-items:center;
+}
+form#frmLogin{
+	padding: 50px;
+	max-width:500px;
+	width:100%;
+	margin: auto;
+}
+h2 {
+    margin: 10px 0;
+    font-size: 28px;
+    font-weight: bolder;
 }
 label{
-    display:block;
-    margin-bottom:10px;
-    font-size:28px;
-    font-weight:bold;
-    color:purple;
+	display: block;
+	font-weight: bolder;
+	color:purple;
+	
 }
-input{
-    width:100%;
-    padding:15px;
-    border-radius:15px;
-    border:2px solid #333;
-    background:white;
-    color:white;
-    font-size:22px;
-	transition: 0.3s;
-}
-input::placeholder{
-    color:#999;
-}
-input:focus{
-    outline:none;
-    border-color:#e91e63;
-    box-shadow:0 0 8px rgba(233,30,99,0.5);
+.form-control{
+	width:100%;
+	margin: 4px 0px;
+
 }
 .button{
-    width:140px;
-    margin-top:10px;
-    margin-right:10px;
-    background:#ff4081;
-    color:white;
-    cursor:pointer;
-    transition:0.3s;
+	padding:2px;
+	width:100px;
+	background-color:red;
+	border-radius:10px;
 }
 .button:hover{
-    background:yellow;
-    transform:scale(1.05);
+	background-color:yellow;
 }
-.switch-form{
-    text-align:center;
-    margin-top:20px;
-    font-size:28px;
+input{
+	border-radius:10px;
+	background-color:purple;
+	
 }
-/*.switch-form a{
-    color:#5a2ea6;
-}*/
-#sbLogin{
-	float: right;
-	margin-right: 10px;
-}
-.switch-form a{
-    color:#673ab7;
-    font-weight:bold;
-    text-decoration:none;
-}
-.switch-form a:hover{
-    text-decoration:underline;
+#txtUsername{
+	font-weight:100px;
 }
