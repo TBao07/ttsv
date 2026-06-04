@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang ="vi">
+<head>
+	<meta charset="UTF-8">
+	<title>Bảng</title>
+	<!--<link href="../css/style.css" rel="stylesheet">-->
+</head>
+<body>
+	<table>
+		<tr>	
+			<th>STT</th>
+			<th>Tên hàng</th>
+			<th>Số lượng</th>
+			<th>Đơn giá</th>
+			<th>ĐVT</th>
+			<th>Thành tiền</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td class="tenhang">Mì trứng vàng</td>
+			<td class="soluong">100</td>
+			<td class="dongia">180000</td>
+			<td class="dvt">Thùng</td>
+			<td class="thanhtien">18000000</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td class="tenhang">Bia Tiger Nâu cao</td>
+			<td class="soluong">100</td>
+			<td class="dongia">360000</td>
+			<td class="dvt">Thùng</td>
+			<td class="thanhtien">36000000</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td class="tenhang">Đậu phộng rang muối</td>
+			<td class="soluong">100</td>
+			<td class="dongia">55000</td>
+			<td class="dvt">Bịch</td>
+			<td class="thanhtien">5500000</td>
+		</tr>
+			<tr>
+			<td>4</td>
+			<td class="tenhang">Sữa Vinamilk</td>
+			<td class="soluong">100</td>
+			<td class="dongia">500000</td>
+			<td class="dvt">Thùng</td>
+			<td class="thanhtien">50000000</td>
+		</tr>
+		<tr>
+			<td>5</td>
+			<td class="tenhang">Gạo</td>
+			<td class="soluong">100</td>
+			<td class="dongia">390000</td>
+			<td class="dvt">Bao</td>
+			<td class="thanhtien">39000000</td>
+		</tr>
+		<tr>
+			<td>6</td>
+			<td class="tenhang">Xe đồ chơi</td>
+			<td class="soluong">100</td>
+			<td class="dongia">150000</td>
+			<td class="dvt">Chiếc</td>
+			<td class="thanhtien">15000000</td>
+		</tr>
+		<tr>
+			<td>7</td>
+			<td class="tenhang">Điện thoại</td>
+			<td class="soluong">100</td>
+			<td class="dongia">15000000</td>
+			<td class="dvt">Cái</td>
+			<td class="thanhtien">1500000000</td>
+		</tr>
+		<tr>
+			<td colspan="5">Tổng thanh toán</td>
+			<td id = "tongthanhtoan"></td>
+		</tr>
+		</table>
+		<script>
+			const sl = document.getElementsByClassName("soluong");
+			const dg = document.getElementsByClassName("dongia");
+			const tt = document.getElementsByClassName("thanhtien");
+
+			tongthanhtoan = 0;
+
+			for(let i = 0; i<sl.length; i++)
+		{
+			tt[i].innerHTML = Number(sl[i].innerHTML) * Number(dg[i].innerHTML)
+			tongthanhtoan += tt[i].innerHTML
+		}
+		getElementsById("tongthanhtoan").innerHTML = tongthanhtoan
+		</script>
+</body>
+</html>
+

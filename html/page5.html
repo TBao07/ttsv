@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang ="vi">
+<head>
+	<meta charset="UTF-8">
+	<title>NHẬP DỮ LIỆU VÀ HIỂN THỊ prompt và alert</title>
+	<!--<link href="../css/style.css" rel="stylesheet">-->
+</head>
+<body>
+	<div class="container">
+		<p id = "name">
+			Bảo 
+			</p>
+	</div>
+	<script>
+		let rong, dai
+		do{
+		let rong = parseFloat (prompt("Nhập chiều dài HCN: "));
+		let dai = parseFloat (prompt("Nhập chiều rộng HCN: "));
+		if (rong > dai) {
+			alert("Chiều rộng không được lớn hơn chiều dài!!. Nhập lại");
+
+		}
+	}while (rong > dai);
+	if(rong==dai){
+		let dt = rong * dai;
+		document.write("Đây là hình vuông<br>");
+		document.write("Diện tích = " + dt)
+	}
+	else{
+		let dt = rong * dai;
+		document.write("Đây là hình chữ nhật<br>");
+		document.write("Diện tích = " + dt)
+	}
+	</script>
+</body>
+</head>
+</html>
+
