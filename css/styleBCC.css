@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Space+Mono:wght@400;700&display=swap');
+
+/* ── Reset & Variables ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg:        #09090f;
+  --surface:   #111118;
+  --border:    #2a2a3a;
+  --glow:      #6c63ff;
+  --glow2:     #ff6b9d;
+  --glow3:     #00e5ff;
+  --text:      #e8e6ff;
+  --muted:     #5a5870;
+  --result-bg: #0d0d16;
+}
+
+/* ── Body ── */
+body {
+  min-height: 100vh;
+  background: var(--bg);
+  background-image:
+    radial-gradient(ellipse 80% 60% at 10% 0%,   rgba(108,99,255,0.15) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 50% at 90% 100%, rgba(255,107,157,0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 50% 50%,  rgba(0,229,255,0.05)  0%, transparent 60%);
+  font-family: 'Space Mono', monospace;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 16px;
+
+  /* Dot grid texture */
+  background-size: 28px 28px, 28px 28px, cover, cover, cover;
+  background-image:
+    radial-gradient(circle, rgba(108,99,255,0.18) 1px, transparent 1px),
+    radial-gradient(circle, rgba(108,99,255,0.08) 1px, transparent 1px),
+    radial-gradient(ellipse 80% 60% at 10% 0%,   rgba(108,99,255,0.15) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 50% at 90% 100%, rgba(255,107,157,0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 50% 50%,  rgba(0,229,255,0.05)  0%, transparent 60%);
+  background-position: 0 0, 14px 14px, center, center, center;
+}
+
+/* ── Container ── */
+.container {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  animation: containerIn 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes containerIn {
+  from { opacity: 0; transform: translateY(40px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0)    scale(1); }
+}
+
+/* ── Title (injected by JS) ── */
+.page-title {
+  font-family: 'Righteous', cursive;
+  font-size: clamp(1.8rem, 6vw, 2.8rem);
+  text-align: center;
+  letter-spacing: 0.08em;
+  background: linear-gradient(135deg, var(--glow) 0%, var(--glow2) 50%, var(--glow3) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 18px rgba(108,99,255,0.5));
+  animation: titlePulse 3s ease-in-out infinite;
+}
+
+@keyframes titlePulse {
+  0%, 100% { filter: drop-shadow(0 0 18px rgba(108,99,255,0.5)); }
+  50%       { filter: drop-shadow(0 0 28px rgba(255,107,157,0.6)); }
+}
+
+/* ── Form Box ── */
+#frmBCC {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  box-shadow:
+    0 0 0 1px rgba(108,99,255,0.08),
+    0 8px 32px rgba(0,0,0,0.5),
+    inset 0 1px 0 rgba(255,255,255,0.04);
+  position: relative;
+  overflow: hidden;
+  animation: boxIn 0.7s 0.1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes boxIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Top accent line */
+#frmBCC::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--glow), var(--glow2), var(--glow3));
+  animation: scanLine 3s linear infinite;
+  background-size: 200%;
+}
+
+@keyframes scanLine {
+  0%   { background-position: 0% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ── Label ── */
+#frmBCC label {
+  font-family: 'Righteous', cursive;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  color: var(--glow3);
+  text-transform: uppercase;
+}
+
+/* ── Number Input ── */
+input[type="number"] {
+  background: rgba(255,255,255,0.04);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  font-family: 'Righteous', cursive;
+  font-size: 2rem;
+  text-align: center;
+  padding: 12px 20px;
+  outline: none;
+  transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+  -moz-appearance: textfield;
+  width: 100%;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
+
+input[type="number"]:focus {
+  border-color: var(--glow);
+  background: rgba(108,99,255,0.07);
+  box-shadow: 0 0 0 3px rgba(108,99,255,0.15), 0 0 20px rgba(108,99,255,0.12);
+}
+
+/* ── Button ── */
+input[type="button"] {
+  background: linear-gradient(135deg, var(--glow) 0%, var(--glow2) 100%);
+  border: none;
+  border-radius: 10px;
+  color: #fff;
+  font-family: 'Righteous', cursive;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  padding: 14px 20px;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.2s, filter 0.2s;
+  box-shadow: 0 4px 20px rgba(108,99,255,0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+input[type="button"]::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+input[type="button"]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(108,99,255,0.55), 0 0 40px rgba(255,107,157,0.2);
+  filter: brightness(1.08);
+}
+input[type="button"]:hover::after { opacity: 1; }
+input[type="button"]:active { transform: scale(0.97); }
+
+/* ── Result Box ── */
+#result {
+  background: var(--result-bg);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 28px;
+  font-family: 'Space Mono', monospace;
+  font-size: 1rem;
+  line-height: 2;
+  color: var(--muted);
+  box-shadow:
+    0 0 0 1px rgba(0,229,255,0.05),
+    0 8px 32px rgba(0,0,0,0.45),
+    inset 0 1px 0 rgba(255,255,255,0.03);
+  position: relative;
+  overflow: hidden;
+  min-height: 80px;
+  transition: box-shadow 0.3s;
+  animation: boxIn 0.7s 0.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Top accent – cyan */
+#result::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--glow3), var(--glow), var(--glow2));
+  background-size: 200%;
+  animation: scanLine 4s linear infinite reverse;
+}
+
+#result:not(:empty) {
+  box-shadow:
+    0 0 0 1px rgba(0,229,255,0.12),
+    0 12px 48px rgba(0,0,0,0.55),
+    inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+/* Each line rendered by JS becomes a <div> with this class */
+#result .row {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  opacity: 0;
+  transform: translateX(-12px);
+  animation: rowIn 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+#result .row:last-child { border-bottom: none; }
+
+@keyframes rowIn {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+#result .row .expr {
+  color: var(--muted);
+  min-width: 110px;
+}
+#result .row .eq {
+  color: var(--glow2);
+  font-weight: 700;
+}
+#result .row .val {
+  font-family: 'Righteous', cursive;
+  font-size: 1.3rem;
+  background: linear-gradient(135deg, var(--glow3), var(--glow));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 6px rgba(0,229,255,0.4));
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
