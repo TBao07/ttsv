@@ -1,0 +1,18 @@
+/* Giúp các ô sản phẩm có chiều cao bằng nhau và ảnh hiển thị chuyên nghiệp */
+.product-item {
+    height: 100%;
+}
+.product-image {
+    height: 250px;
+    overflow: hidden;
+    background-color: #f8f9fa;
+}
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Giữ nguyên tỉ lệ ảnh không bị móp méo */
+}
+/* Định dạng giá tiền bằng số cho gọn gàng hơn */
+.card-text {
+    font-size: 14px;
+}
