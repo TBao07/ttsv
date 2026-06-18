@@ -16,7 +16,7 @@ const products = [
     price:9000000,
     description:"Kim Cương Tự Nhiên-Loại chất liệu: Vàng 14K",
     image:"../assets/images/kimcuong.jpg",
-    link:"chi-tiet.html"
+    link:"chi-tiet.html?id=1"
 },
 {
     id:"2",
@@ -24,7 +24,7 @@ const products = [
     price:19000000,
     description:"Đây là điện thoại vivo x200 pro mini chip Demensity 9400",
     image:"../assets/images/vivox200promini.jpg",
-    link:"chi-tiet.html"
+    link:"chi-tiet.html?id=2"
 },
 {
     id:"3",
@@ -32,7 +32,7 @@ const products = [
     price:1000000000,
     description:"Đây là siêu thị co.op mart",
     image:"../assets/images/sieuthi.jpg",
-    link:"chi-tiet.html"
+    link:"chi-tiet.html?id=3"
 }
 
 ]
